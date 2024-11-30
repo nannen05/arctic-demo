@@ -1,0 +1,32 @@
+{
+    "eyebrow": "Comfortbaly Uncomfortable",
+    "title": "Start with your goals",
+    "copy": "We cannot become what we want to be by remaining what we are.",
+    "goals": [
+        {
+            "title": "Sleep",
+            "copy" : "Optimze your sleep patterns",
+            "image": "/app/assets/sleep.png"
+        },
+        {
+            "title": "Cognitive Function",
+            "copy" : "Enhance your brain's performance and connectivity",
+            "image": "/app/assets/cognitive.png"
+        },
+        {
+            "title": "Foundational Health",
+            "copy" : "Promoting healthy, natural deep sleep day to day",
+            "image": "/app/assets/health.png"
+        },
+        {
+            "title": "Athletic Performance",
+            "copy" : "Increase your healthy tissue, muscle, and energy",
+            "image": "/app/assets/athletic.png"
+        },
+        {
+            "title": "Hormone Support",
+            "copy" : "Boost your mood, libido, and vitality",
+            "image": "/app/assets/hormone.png"
+        }
+    ]
+}

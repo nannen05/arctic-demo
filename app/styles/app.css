@@ -1,15 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 :root {
   --aside-width: 400px;
   --cart-aside-summary-height-with-discount: 300px;
   --cart-aside-summary-height: 250px;
   --grid-item-width: 355px;
-  --header-height: 64px;
+  --header-height: 70px;
   --color-dark: #000;
   --color-light: #fff;
+  --content-max-width: 1520px;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  color: #1B1F23;
 }
 
 img {
   border-radius: 4px;
+}
+
+@keyframes newsTicker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-news-ticker-1 {
+  animation: newsTicker 20s linear infinite;
+  height: 25px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /*
@@ -87,7 +115,7 @@ aside li {
   transition: opacity 400ms ease-in-out;
   transition: opacity 400ms;
   visibility: hidden;
-  z-index: 10;
+  z-index: 12;
 }
 
 .overlay .close-outside {
@@ -147,16 +175,16 @@ button.reset:hover:not(:has(> *)) {
 * components/Header
 * --------------------------------------------------
 */
-.header {
+/* .header {
   align-items: center;
-  background: #fff;
+  // background: #fff;
   display: flex;
   height: var(--header-height);
   padding: 0 1rem;
   position: sticky;
   top: 0;
   z-index: 1;
-}
+} */
 
 .header-menu-mobile-toggle {
   @media (min-width: 48em) {
@@ -173,10 +201,10 @@ button.reset:hover:not(:has(> *)) {
 .header-menu-desktop {
   display: none;
   grid-gap: 1rem;
-  @media (min-width: 45em) {
+  @media (min-width: 48em) {
     display: flex;
-    grid-gap: 1rem;
-    margin-left: 3rem;
+    grid-gap: 40px;
+
   }
 }
 
@@ -187,8 +215,7 @@ button.reset:hover:not(:has(> *)) {
 .header-ctas {
   align-items: center;
   display: flex;
-  grid-gap: 1rem;
-  margin-left: auto;
+  grid-gap: 10px;
 }
 
 /*
@@ -197,7 +224,7 @@ button.reset:hover:not(:has(> *)) {
 * --------------------------------------------------
 */
 .footer {
-  background: var(--color-dark);
+  /* background: var(--color-dark); */
   margin-top: auto;
 }
 

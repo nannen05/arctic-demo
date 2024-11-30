@@ -1,0 +1,90 @@
+{
+    "eyebrow": "Simple & Effective Ingredients",
+    "title": "Customized Protein Powder",
+    "ctaText": "Customize This Blend",
+    "ctaLink": "#",
+    "ingredients": [
+        {
+            "blends": [
+                {
+                    "title": "Whey Based"
+                },
+                {
+                    "title": "Build Muscle"
+                },
+                {
+                    "title": "Clean Ingredients"
+                }
+            ],
+            "activeIngredients": [
+                {
+                    "title": "Why Protein Isolate",
+                    "copy": "Low Calorie"
+                },
+                {
+                    "title": "Why Protein Isolate",
+                    "copy": "Low Calorie"
+                },
+                {
+                    "title": "Why Protein Isolate",
+                    "copy": "Low Calorie"
+                }
+            ]
+        },
+        {
+            "blends": [
+                {
+                    "title": "Whey Based"
+                },
+                {
+                    "title": "Build Muscle"
+                },
+                {
+                    "title": "Clean Ingredients"
+                }
+            ],
+            "activeIngredients": [
+                {
+                    "title": "Why Protein Isolate",
+                    "copy": "Low Calorie"
+                },
+                {
+                    "title": "Why Protein Isolate",
+                    "copy": "Low Calorie"
+                },
+                {
+                    "title": "Why Protein Isolate",
+                    "copy": "Low Calorie"
+                }
+            ]
+        },
+        {
+            "blends": [
+                {
+                    "title": "Whey Based"
+                },
+                {
+                    "title": "Build Muscle"
+                },
+                {
+                    "title": "Clean Ingredients"
+                }
+            ],
+            "activeIngredients": [
+                {
+                    "title": "Why Protein Isolate",
+                    "copy": "Low Calorie"
+                },
+                {
+                    "title": "Why Protein Isolate",
+                    "copy": "Low Calorie"
+                },
+                {
+                    "title": "Why Protein Isolate",
+                    "copy": "Low Calorie"
+                }
+            ]
+        }
+    ]
+    
+}

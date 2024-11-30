@@ -16,6 +16,16 @@ export default async function handleRequest(
       checkoutDomain: context.env.PUBLIC_CHECKOUT_DOMAIN,
       storeDomain: context.env.PUBLIC_STORE_DOMAIN,
     },
+    defaultSrc: [
+      "'self'",
+      'https://cdn.shopify.com',
+      'https://placehold.co',
+      'https://placebear.com',
+      'https://fonts.gstatic.com',
+      'https://fonts.googleapis.com',
+      'https://s3-figma-videos-production-sig.figma.com',
+      'https://s3-alpha-sig.figma.com'
+    ],
   });
 
   const body = await renderToReadableStream(

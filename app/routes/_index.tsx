@@ -6,6 +6,17 @@ import type {
   FeaturedCollectionFragment,
   RecommendedProductsQuery,
 } from 'storefrontapi.generated';
+import HeroBackground from '../components/HeroBackground';
+import Goals from '../components/Goals'
+import ProductSlider from '~/components/ProductSlider';
+import ValueProps from '../components/ValueProps'
+import Bundles from '../components/Bundles'
+import IngredientSlider from '~/components/IngredientSlider';
+import ReviewSlider from '../components/ReviewSlider';
+import Banner from '../components/Banner'
+import BlogPopularPosts from '~/components/BlogPopularPosts';
+import Instagram from '../components/Instagram'
+import ReviewBlock from '~/components/ReviewBlock';
 
 export const meta: MetaFunction = () => {
   return [{title: 'Hydrogen | Home'}];
@@ -26,12 +37,20 @@ export async function loader(args: LoaderFunctionArgs) {
  * needed to render the page. If it's unavailable, the whole page should 400 or 500 error.
  */
 async function loadCriticalData({context}: LoaderFunctionArgs) {
+  // console.log('context', context.storefront)
   const [{collections}] = await Promise.all([
     context.storefront.query(FEATURED_COLLECTION_QUERY),
     // Add other queries here, so that they are loaded in parallel
   ]);
 
+  // const productSliderItems =  await Promise.all([
+  //   context.storefront.query(PRODUCT_QUERY, {
+  //     variables: {ids: ["gid://shopify/Product/10128367943844", "gid://shopify/Product/10128367714468", "gid://shopify/Product/10128367943844", "gid://shopify/Product/10128367714468", "gid://shopify/Product/10128367943844"]},
+  //   }),
+  // ]);
+
   return {
+    // productSliderItems,
     featuredCollection: collections.nodes[0],
   };
 }
@@ -50,7 +69,35 @@ function loadDeferredData({context}: LoaderFunctionArgs) {
       return null;
     });
 
+    const productSliderItems = 
+      context.storefront
+        .query(PRODUCTS_QUERY, {
+          variables: {ids: ["gid://shopify/Product/10128700997796", "gid://shopify/Product/10128367943844", "gid://shopify/Product/10128367714468", "gid://shopify/Product/10128367943844", "gid://shopify/Product/10128367714468", "gid://shopify/Product/10128367943844"]},
+        })
+        .then(data => {return data})
+        .catch((error) => {
+          // Log query errors, but don't throw them so the page can still render
+          console.error(error);
+          return null;
+    })
+
+    const bundleSliderItems = 
+        context.storefront
+        .query(PRODUCTS_QUERY, {
+          variables: {ids: ["gid://shopify/Product/10128367943844", "gid://shopify/Product/10128367714468", "gid://shopify/Product/10128367943844", "gid://shopify/Product/10128367714468", "gid://shopify/Product/10128367943844"]},
+        })
+        .then(data => {return data})
+        .catch((error) => {
+          // Log query errors, but don't throw them so the page can still render
+          console.error(error);
+          return null;
+    })
+
+    console.log(bundleSliderItems, productSliderItems)
+
   return {
+    bundleSliderItems,
+    productSliderItems,
     recommendedProducts,
   };
 }
@@ -58,9 +105,20 @@ function loadDeferredData({context}: LoaderFunctionArgs) {
 export default function Homepage() {
   const data = useLoaderData<typeof loader>();
   return (
-    <div className="home">
-      <FeaturedCollection collection={data.featuredCollection} />
-      <RecommendedProducts products={data.recommendedProducts} />
+    <div className="home top-[-64px] relative">
+      <HeroBackground />
+      <ReviewBlock />
+      <Goals />
+      <ProductSlider products={data.productSliderItems} />
+      <ValueProps />
+      <ReviewSlider />
+      <Bundles products={data.bundleSliderItems} />
+      <IngredientSlider />
+      <Banner />
+      <BlogPopularPosts />
+      <Instagram />
+        {/* <FeaturedCollection collection={data.featuredCollection} />
+        <RecommendedProducts products={data.recommendedProducts} />  */}
     </div>
   );
 }
@@ -126,6 +184,24 @@ function RecommendedProducts({
     </div>
   );
 }
+
+const PRODUCTS_QUERY = `#graphql
+  query Products($ids: [ID!]!) {
+    nodes(ids: $ids) {
+      ... on Product {
+        id
+        title
+        description
+        tags
+        images (first: 1){
+          nodes {
+            url(transform: {maxHeight: 505, maxWidth: 365})
+          }
+        }
+      }
+    }
+  }
+` as const;
 
 const FEATURED_COLLECTION_QUERY = `#graphql
   fragment FeaturedCollection on Collection {

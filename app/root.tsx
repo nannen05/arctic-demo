@@ -40,12 +40,25 @@ export const shouldRevalidate: ShouldRevalidateFunction = ({
 
 export function links() {
   return [
+    {
+      rel: 'preconnect',
+      href: "https://fonts.googleapis.com"
+    }, 
+    {
+      rel: 'preconnect',
+      href: "https://fonts.gstatic.com"
+    }, 
+    {rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"},
     {rel: 'stylesheet', href: tailwindCss},
     {rel: 'stylesheet', href: resetStyles},
     {rel: 'stylesheet', href: appStyles},
     {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',
+    },
+    {
+      rel: 'preconnect',
+      href: 'https://placehold.co',
     },
     {
       rel: 'preconnect',
@@ -124,6 +137,7 @@ function loadDeferredData({context}: LoaderFunctionArgs) {
       console.error(error);
       return null;
     });
+  
   return {
     cart: cart.get(),
     isLoggedIn: customerAccount.isLoggedIn(),

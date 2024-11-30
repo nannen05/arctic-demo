@@ -1,0 +1,30 @@
+{
+    "eyebrow": "🧐 Why Health & Fitness",
+    "title": "Clean Supplements - Made For You",
+    "props": [
+        {
+            "title": "We Make It Easy",
+            "copy" : "Personalized Solutions & Guidance Mean You Get Just What You Need Nothing More",
+            "image": "/app/assets/thumbs-up.png",
+            "imageAlt": "thumbs up"
+        },
+        {
+            "title": "Clean & Effective",
+            "copy" : "Proven Ingredients, not Artificial, Crafted By Experts For Optimal Effectiveness",
+            "image": "/app/assets/leaf.png",
+            "imageAlt": "thumbs up"
+        },
+        {
+            "title": "Your Free Dietitian",
+            "copy" : "Every Gainful Subscriber Gets Free, 1:1 Access Their Own Registered Dietitian.",
+            "image": "/app/assets/chat.png",
+            "imageAlt": "thumbs up"
+        },
+        {
+            "title": "Made For You",
+            "copy" : "Performance is Personal. Personalized & Customizable Products For Your Needs, Body & Goals",
+            "image": "/app/assets/clibboard.png",
+            "imageAlt": "thumbs up"
+        }
+    ]
+}

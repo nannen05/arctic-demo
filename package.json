@@ -20,9 +20,13 @@
     "@shopify/remix-oxygen": "^2.0.9",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
+    "install": "^0.13.0",
     "isbot": "^3.8.0",
+    "npm": "^10.9.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "swiper": "^11.1.14",
+    "vercel": "^39.1.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "5.0.2",
